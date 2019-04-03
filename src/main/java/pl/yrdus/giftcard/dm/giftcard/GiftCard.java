@@ -13,15 +13,26 @@ public class GiftCard {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Integer id;
     @NotNull
-    public String code;
+    private String code;
     @NotNull
-    public double value;
+    private double value;
     @NotNull
-    public boolean active = true;
+    private boolean active = true;
     @NotNull
-    public Date expiresAt;
+    private Date expiresAt;
     @NotNull
-    public Date createdAt;
+    private Date createdAt;
     @NotNull
-    public Date modifiedAt;
+    private Date modifiedAt;
+    private Date usedAt = null;
+
+    public GiftCard(@NotNull String code, @NotNull double value, @NotNull boolean active, @NotNull Date expiresAt, @NotNull Date createdAt, @NotNull Date modifiedAt,Date usedAt) {
+        this.code = code;
+        this.value = value;
+        this.active = active;
+        this.expiresAt = expiresAt;
+        this.createdAt = createdAt;
+        this.modifiedAt = modifiedAt;
+        this.usedAt = usedAt;
+    }
 }
